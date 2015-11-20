@@ -1,9 +1,60 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>That's A Happy Dumbo</title>
-</head>
-<body>
-  <img src="elephant.jpg" />
-</body>
+  <head>
+    <style>
+      @keyframes dick-rot {
+        0% { transform: rotateZ(0deg)}
+        100% { transform: rotateZ(360deg)}
+      }
+
+      body {
+        margin: 0;
+      }
+
+      .dick-base {
+        position: absolute;
+      }
+
+      .dick {
+        animation: dick-rot 1s;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+        transform-origin: 80px 250px;
+        position: absolute;
+        top: 10px ;
+        left: 160px;
+      }
+
+      .msg {
+        position: absolute;
+        z-index: 9999;
+        font-weight: 900;
+        font-size: 80px;
+      }
+
+    </style>
+  </head>
+
+  <body>
+    <span class="msg" id="msg">HEY CHECKOUT MY PORTFOLIO</span>
+    <img class="dick-base" src="dickbase.png" />
+    <img class="dick" src="dick.png" />
+  </body>
+
+  <script>
+    var msg = document.getElementById("msg");
+    var dick = document.getElementsByClassName('dick')[0];
+
+    window.addEventListener("mousemove", function(event) {
+      var left = event.screenX;
+      var top = event.screenY;
+
+      msg.style.transform = "skew(" + Math.round(Math.random() * 360) + 'deg' + ")";
+
+      msg.style.left = (left - 100) + "px";
+      msg.style.top = (top - 150) + "px";
+
+      dick.style.animationDuration = Math.random() * 3 + "s"
+    })
+  </script>
 </html>
