@@ -84,23 +84,21 @@
       msg.style.transform = "skew(" + Math.round(Math.random() * 60) + 'deg' + ")";
       msg.style.WebkitTransform = "skew(" + Math.round(Math.random() * 60) + 'deg' + ")";
 
-      msg.style.left = (left - 100) + "px";
-      msg.style.top = (top - 150) + "px";
+      msg.style.left = (left - 500) + "px";
+      msg.style.top = (top - 300) + "px";
 
       dick.style.animationDuration = Math.random() * 3 + "s";
       dick.style.WebkitAnimationDuration = Math.random() * 3 + "s";
-    })
 
-    for (var dickIndex = 0; dickIndex < 10; dickIndex++) {
       (function dick() {
         var dick = document.createElement("img");
         dick.className = 'dick';
         dick.src = "dick.png"
-        dick.style.left = Math.random() * 1000 + "px";
-        dick.style.top = Math.random() * 1000 + "px";
+        dick.style.left = (left - 500) + "px";;
+        dick.style.top = (top - 300) + "px";
 
-        document.body. appendChild(dick);
+        document.body.appendChild(dick);
       })()
-    }
+    })
   </script>
 </html>
