@@ -3,8 +3,13 @@
   <head>
     <style>
       @keyframes dick-rot {
-        0% { transform: rotateZ(0deg)}
-        100% { transform: rotateZ(360deg)}
+        0% { transform: rotateZ(0deg); -webkit-transform: rotateZ(0deg)}
+        100% { transform: rotateZ(360deg); -webkit-transform: rotateZ(360deg);}
+      }
+
+      @-webkit-keyframes dick-rot {
+        0% { transform: rotateZ(0deg); -webkit-transform: rotateZ(0deg)}
+        100% { transform: rotateZ(360deg); -webkit-transform: rotateZ(360deg);}
       }
 
       body {
@@ -16,10 +21,17 @@
       }
 
       .dick {
+        -webkit-animation: dick-rot 1s;
         animation: dick-rot 1s;
+
         animation-timing-function: linear;
+        -webkit-animation-timing-function: linear;
+
         animation-iteration-count: infinite;
+        -webkit-animation-iteration-count: infinite;
+
         transform-origin: 80px 250px;
+        -webkit-transform-origin: 80px 250px;
         position: absolute;
         top: 10px ;
         left: 160px;
@@ -50,11 +62,13 @@
       var top = event.screenY;
 
       msg.style.transform = "skew(" + Math.round(Math.random() * 360) + 'deg' + ")";
+      msg.style.WebkitTransform = "skew(" + Math.round(Math.random() * 360) + 'deg' + ")";
 
       msg.style.left = (left - 100) + "px";
       msg.style.top = (top - 150) + "px";
 
       dick.style.animationDuration = Math.random() * 3 + "s"
+      dick.style.WebkitAnimationDuration = Math.random() * 3 + "s"
     })
   </script>
 </html>
